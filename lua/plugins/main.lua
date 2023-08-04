@@ -5,10 +5,18 @@ require('plugins/comment')
 require('plugins/barbar')
 require('plugins/treesitter')
 require('plugins/telescope')
+require('plugins/ufo')
+require('plugins/prettyFold')
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
-  use 'dracula/vim'
+
+  use 'morhetz/gruvbox'
+  use 'Mofiqul/dracula.nvim'
+  use 'shaunsingh/nord.nvim'
+  use 'folke/tokyonight.nvim'
+  use 'EdenEast/nightfox.nvim'
+
   use 'nvim-tree/nvim-tree.lua'
   use 'numToStr/Comment.nvim'
   use {
@@ -23,4 +31,6 @@ return require('packer').startup(function(use)
 		'nvim-telescope/telescope.nvim', tag = '0.1.2',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
+	use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+  use 'anuvyklack/pretty-fold.nvim'
 end)

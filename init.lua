@@ -1,8 +1,11 @@
 require('plugins/main')
 
-local set = vim.opt -- set options
+local opt = vim.opt -- set options
 
-set.tabstop = 2
-set.softtabstop = 2
-set.shiftwidth = 2
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.softtabstop = 2
+opt.expandtab = true
+
+vim.wo.number = true
 
