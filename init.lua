@@ -9,3 +9,5 @@ opt.expandtab = true
 
 vim.wo.number = true
 
+vim.cmd [[colorscheme carbonfox]] -- default colorscheme
+
