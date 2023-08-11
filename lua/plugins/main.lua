@@ -1,6 +1,7 @@
 vim.cmd [[packadd packer.nvim]]
 
--- 
+
+--
 -- including packer configs
 --
 require('plugins/nvimTree')
@@ -12,6 +13,10 @@ require('plugins/prettyFold')
 require('plugins/lsp')
 require('plugins/autocomplete')
 require('plugins/treesitter')
+require('plugins/hop')
+require('plugins/indentBlankline')
+require('plugins/codeium')
+
 
 -- 
 -- plugins installation use packer
@@ -41,6 +46,10 @@ return require('packer').startup(function(use)
 		'nvim-telescope/telescope.nvim', tag = '0.1.2',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
+  use { -- fast navigation in files
+    'phaazon/hop.nvim',
+    branch = 'v2'
+  }
 
   
   -- 
@@ -56,10 +65,10 @@ return require('packer').startup(function(use)
   -- autocomplete
   --
   use {
-      "hrsh7th/nvim-cmp",
-      requires = {
-        "hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp", 'hrsh7th/cmp-path', 'saadparwaiz1/cmp_luasnip'
-      }
+    "hrsh7th/nvim-cmp",
+    requires = {
+      "hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp", 'hrsh7th/cmp-path', 'saadparwaiz1/cmp_luasnip'
+    }
   }
   use 'L3MON4D3/LuaSnip'
   use 'rafamadriz/friendly-snippets'
@@ -76,6 +85,7 @@ return require('packer').startup(function(use)
 	use 'yuezk/vim-js' -- JS syntax
 	use 'maxmellon/vim-jsx-pretty' -- JSX syntax
 	use 'anuvyklack/pretty-fold.nvim' -- for good view of folds
+  use "lukas-reineke/indent-blankline.nvim"
 
 
   --
