@@ -19,6 +19,7 @@ require('plugins/treesitter')
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim' -- packer update
 
+
   -- 
   -- themes
   --
@@ -30,16 +31,17 @@ return require('packer').startup(function(use)
   use 'julien/vim-colors-green'
   use 'sickill/vim-monokai'
 
+
+  -- 
+  -- navigation
+  --
   use 'nvim-tree/nvim-tree.lua' -- side tree of files and folders
-  use 'numToStr/Comment.nvim' -- fast comment plugin 
 	use 'romgrk/barbar.nvim' -- top bar with open files
-	use 'Exafunction/codeium.vim' -- AI friend
-	use { -- good searcher
+  use { -- good searcher
 		'nvim-telescope/telescope.nvim', tag = '0.1.2',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
-	use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'} -- for folding
-  use 'anuvyklack/pretty-fold.nvim' -- for good view of folds
+
   
   -- 
   -- lsp
@@ -47,6 +49,8 @@ return require('packer').startup(function(use)
   use 'neovim/nvim-lspconfig' -- lsp config 
   use 'williamboman/mason.nvim' -- for easy lsp installing
   use 'williamboman/mason-lspconfig.nvim' -- for easy lsp installing
+  use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'} -- for folding using lsp
+
   
   -- 
   -- autocomplete
@@ -59,15 +63,23 @@ return require('packer').startup(function(use)
   }
   use 'L3MON4D3/LuaSnip'
   use 'rafamadriz/friendly-snippets'
+	use 'Exafunction/codeium.vim' -- AI friend
+
 
   --
-  -- highlight
+  -- highlight and beautify
   --
   use { -- treesitter for highlighting
     'nvim-treesitter/nvim-treesitter',
     run = ":TSUpdate"
   }
 	use 'yuezk/vim-js' -- JS syntax
-	use 'maxmellon/vim-jsx-pretty' -- JSX syntax 
-  use 'vim-python/python-syntax' -- python syntax 
+	use 'maxmellon/vim-jsx-pretty' -- JSX syntax
+	use 'anuvyklack/pretty-fold.nvim' -- for good view of folds
+
+
+  --
+  -- other
+  --
+  use 'numToStr/Comment.nvim' -- fast comment plugin 
 end)

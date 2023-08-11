@@ -5,7 +5,10 @@ vim.g.loaded_netrwPlugin = 1
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
--- empty setup using defaults
+
+-- 
+-- set own icons
+--
 require("nvim-tree").setup {
     renderer = {
     indent_markers = {
@@ -63,3 +66,12 @@ require("nvim-tree").setup {
      },
   },
 }
+
+
+--
+-- keybuildings
+--
+local map = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
+
+map('n', '<C-b>', '<Cmd>NvimTreeToggle<CR>', opts) -- Toggle file explorer

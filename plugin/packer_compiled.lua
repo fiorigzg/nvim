@@ -194,11 +194,6 @@ _G.packer_plugins = {
     path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/promise-async",
     url = "https://github.com/kevinhwang91/promise-async"
   },
-  ["python-syntax"] = {
-    loaded = true,
-    path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/python-syntax",
-    url = "https://github.com/vim-python/python-syntax"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/telescope.nvim",

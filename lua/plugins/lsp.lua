@@ -4,6 +4,7 @@
 require('mason').setup()
 require('mason-lspconfig').setup()
 
+
 -- 
 -- lspconfig
 --
@@ -16,6 +17,7 @@ lsp_defaults.capabilities = vim.tbl_deep_extend(
   require('cmp_nvim_lsp').default_capabilities()
 )
 
+
 -- 
 -- LSP servers setup
 --
@@ -25,10 +27,11 @@ lspconfig.eslint.setup {}
 lspconfig.custom_elements_ls.setup {}
 lspconfig.cssls.setup {}
 lspconfig.html.setup {}
+
+
 --
 -- keybuildings
 --
-
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
   callback = function()
@@ -53,6 +56,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     bufmap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
   end
 })
+
 
 ---
 -- Diagnostics
