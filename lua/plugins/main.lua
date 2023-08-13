@@ -89,6 +89,12 @@ return require('packer').startup(function(use)
 
 
   --
+  -- git
+  --
+  use "sindrets/diffview.nvim" -- show all file git diff
+
+
+  --
   -- other
   --
   use 'numToStr/Comment.nvim' -- fast comment plugin 
