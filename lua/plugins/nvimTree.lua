@@ -74,4 +74,4 @@ require("nvim-tree").setup {
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
-map('n', '<C-b>', '<Cmd>NvimTreeToggle<CR>', opts) -- Toggle file explorer
+map('n', '<C-B>', '<Cmd>NvimTreeToggle<CR>', opts) -- Toggle file explorer

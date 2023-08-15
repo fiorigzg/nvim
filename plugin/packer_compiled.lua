@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/codeium.vim",
     url = "https://github.com/Exafunction/codeium.vim"
   },
+  ["diffview.nvim"] = {
+    loaded = true,
+    path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/diffview.nvim",
+    url = "https://github.com/sindrets/diffview.nvim"
+  },
   ["dracula.nvim"] = {
     loaded = true,
     path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/dracula.nvim",
@@ -128,6 +133,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/morhetz/gruvbox"
+  },
+  ["hop.nvim"] = {
+    loaded = true,
+    path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/hop.nvim",
+    url = "https://github.com/phaazon/hop.nvim"
+  },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,

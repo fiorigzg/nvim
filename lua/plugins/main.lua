@@ -16,6 +16,7 @@ require('plugins/treesitter')
 require('plugins/hop')
 require('plugins/indentBlankline')
 require('plugins/codeium')
+require('plugins/toggleterm')
 
 
 -- 
@@ -85,13 +86,19 @@ return require('packer').startup(function(use)
 	use 'yuezk/vim-js' -- JS syntax
 	use 'maxmellon/vim-jsx-pretty' -- JSX syntax
 	use 'anuvyklack/pretty-fold.nvim' -- for good view of folds
-  use "lukas-reineke/indent-blankline.nvim"
+  use "lukas-reineke/indent-blankline.nvim" -- for good indentation view
 
 
   --
   -- git
   --
   use "sindrets/diffview.nvim" -- show all file git diff
+
+
+  --
+  -- terminal
+  --
+  use 'akinsho/toggleterm.nvim' -- terminal
 
 
   --
