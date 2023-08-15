@@ -2,7 +2,6 @@
 -- Load snippets from friendly-snippets
 -- 
 require('luasnip.loaders.from_vscode').lazy_load()
-
 --
 -- nvim-cmp
 --
@@ -35,10 +34,11 @@ cmp.setup({
         nvim_lsp = 'λ',
         luasnip = '⋗',
         buffer = 'Ω',
-        path = '🖫',
+        path = '■',
       }
 
       item.menu = menu_icon[entry.source.name]
+
       return item
     end,
   },

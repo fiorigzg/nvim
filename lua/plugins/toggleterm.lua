@@ -4,21 +4,20 @@ require("toggleterm").setup {
 
 
 --
--- keybuildings
+-- keybindings
 --
 
-local map = vim.api.nvim_set_keymap
+local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
--- Open telescope 
-map('n', [[<C-\>]], '<Cmd>ToggleTerm<CR>', opts)
+keymap.set('n', [[<C-\>]], '<Cmd>ToggleTerm<CR>', opts)
 
 -- interminal navigation
 function _G.set_terminal_keymaps()
   local opts = {buffer = 0}
-  vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
-  vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], opts)
-  vim.keymap.set('t', [[<C-\>]], '<Cmd>ToggleTerm<CR>', opts)
+  keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
+  keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], opts)
+  keymap.set('t', [[<C-\>]], '<Cmd>ToggleTerm<CR>', opts)
 end
 
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead

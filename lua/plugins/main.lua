@@ -17,6 +17,11 @@ require('plugins/hop')
 require('plugins/indentBlankline')
 require('plugins/codeium')
 require('plugins/toggleterm')
+require('plugins/whichKey')
+require('plugins/spider')
+require('plugins/twilight')
+require('plugins/portal')
+require('plugins/cursorline')
 
 
 -- 
@@ -51,6 +56,7 @@ return require('packer').startup(function(use)
     'phaazon/hop.nvim',
     branch = 'v2'
   }
+  use 'cbochs/portal.nvim' -- for quick jumplist
 
   
   -- 
@@ -87,7 +93,9 @@ return require('packer').startup(function(use)
 	use 'maxmellon/vim-jsx-pretty' -- JSX syntax
 	use 'anuvyklack/pretty-fold.nvim' -- for good view of folds
   use "lukas-reineke/indent-blankline.nvim" -- for good indentation view
-
+  use 'folke/twilight.nvim' -- for good night mode
+  use 'yamatsum/nvim-cursorline' -- highlight similar words
+  
 
   --
   -- git
@@ -102,7 +110,15 @@ return require('packer').startup(function(use)
 
 
   --
+  -- keybuindings
+  --
+  use 'folke/which-key.nvim' -- keybindings controller
+  use 'chrisgrieser/nvim-spider' -- better w,b,e,ge
+  use 'numToStr/Comment.nvim' -- fast comment plugin 
+
+  
+  -- 
   -- other
   --
-  use 'numToStr/Comment.nvim' -- fast comment plugin 
+  use 'ThePrimeagen/vim-be-good' -- fast typing game
 end)

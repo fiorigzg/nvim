@@ -2,14 +2,13 @@ require("telescope").setup()
 
 
 --
--- keybuildings
+-- keybindings
 --
 
-local map = vim.api.nvim_set_keymap
+local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
--- Open telescope 
-map('n', '<Space>fg', '<Cmd>Telescope live_grep<CR>', opts)
-map('n', '<Space>ff', '<Cmd>Telescope find_files<CR>', opts)
-map('n', '<Space>fs', '<Cmd>Telescope grep_string<CR>', opts)
+keymap.set('n', '<Space>fg', '<Cmd>Telescope live_grep<CR>', opts)
+keymap.set('n', '<Space>ff', '<Cmd>Telescope find_files<CR>', opts)
+keymap.set('n', '<Space>fs', '<Cmd>Telescope grep_string<CR>', opts)
 
