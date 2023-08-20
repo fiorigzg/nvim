@@ -10,8 +10,6 @@ require('plugins/barbar')
 require('plugins/telescope')
 require('plugins/ufo')
 require('plugins/prettyFold')
-require('plugins/lsp')
-require('plugins/autocomplete')
 require('plugins/treesitter')
 require('plugins/hop')
 require('plugins/indentBlankline')
@@ -22,6 +20,9 @@ require('plugins/spider')
 require('plugins/twilight')
 require('plugins/portal')
 require('plugins/cursorline')
+require('plugins/lspconfig')
+require('plugins/cmp')
+-- require('plugins/coc')
 
 
 -- 
@@ -39,7 +40,6 @@ return require('packer').startup(function(use)
   use 'shaunsingh/nord.nvim'
   use 'folke/tokyonight.nvim'
   use 'EdenEast/nightfox.nvim'
-  use 'julien/vim-colors-green'
   use 'sickill/vim-monokai'
 
 
@@ -58,28 +58,60 @@ return require('packer').startup(function(use)
   }
   use 'cbochs/portal.nvim' -- for quick jumplist
 
-  
+
   -- 
-  -- lsp
+  -- lspconfig
   --
   use 'neovim/nvim-lspconfig' -- lsp config 
   use 'williamboman/mason.nvim' -- for easy lsp installing
   use 'williamboman/mason-lspconfig.nvim' -- for easy lsp installing
-  use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'} -- for folding using lsp
 
-  
+
   -- 
-  -- autocomplete
+  -- cmp 
   --
   use {
     "hrsh7th/nvim-cmp",
     requires = {
-      "hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp", 'hrsh7th/cmp-path', 'saadparwaiz1/cmp_luasnip'
+      "hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp", 'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline', 'saadparwaiz1/cmp_luasnip'
     }
   }
   use 'L3MON4D3/LuaSnip'
   use 'rafamadriz/friendly-snippets'
-	use 'Exafunction/codeium.vim' -- AI friend
+  -- use { -- for AI friend
+  --   "jcdickinson/http.nvim",
+  --   run = "cargo build --workspace --release"
+  -- }
+  use { -- AI friend in cmp
+    "jcdickinson/codeium.nvim",
+    requires = {
+      -- "jcdickinson/http.nvim",
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
+    },
+  }
+
+
+  -- 
+  -- coc
+  --
+  -- use { 'neoclide/coc.nvim', branch = 'release' }
+  -- use { 'neoclide/coc-tsserver', run = 'yarn install --frozen-lockfile' }
+  -- use { 'fannheyward/coc-pyright', run = 'yarn install --frozen-lockfile' }
+  -- use { 'josa42/coc-lua', run = 'yarn install --frozen-lockfile' }
+  -- use { 'neoclide/coc-prettier', run = 'yarn install --frozen-lockfile' }
+  -- use { 'neoclide/coc-html', run = 'yarn install --frozen-lockfile' }
+  -- use { 'neoclide/coc-css', run = 'yarn install --frozen-lockfile' }
+  -- use { 'neoclide/coc-json', run = 'yarn install --frozen-lockfile' }
+  -- use { 'weirongxu/coc-explorer', run = 'yarn install --frozen-lockfile' }
+  -- use { 'neoclide/coc-snippets', run = 'yarn install --frozen-lockfile' }
+
+
+  --
+  -- formatting
+  --
+	-- use 'Exafunction/codeium.vim' -- AI friend
+  use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'} -- for folding using lsp
 
 
   --
@@ -95,7 +127,7 @@ return require('packer').startup(function(use)
   use "lukas-reineke/indent-blankline.nvim" -- for good indentation view
   use 'folke/twilight.nvim' -- for good night mode
   use 'yamatsum/nvim-cursorline' -- highlight similar words
-  
+
 
   --
   -- git
@@ -116,7 +148,7 @@ return require('packer').startup(function(use)
   use 'chrisgrieser/nvim-spider' -- better w,b,e,ge
   use 'numToStr/Comment.nvim' -- fast comment plugin 
 
-  
+
   -- 
   -- other
   --

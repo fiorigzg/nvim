@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
   },
+  ["cmp-cmdline"] = {
+    loaded = true,
+    path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+    url = "https://github.com/hrsh7th/cmp-cmdline"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -109,10 +114,10 @@ _G.packer_plugins = {
     path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["codeium.vim"] = {
+  ["codeium.nvim"] = {
     loaded = true,
-    path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/codeium.vim",
-    url = "https://github.com/Exafunction/codeium.vim"
+    path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/codeium.nvim",
+    url = "https://github.com/jcdickinson/codeium.nvim"
   },
   ["diffview.nvim"] = {
     loaded = true,
@@ -169,10 +174,20 @@ _G.packer_plugins = {
     path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-cursorline"] = {
+    loaded = true,
+    path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/nvim-cursorline",
+    url = "https://github.com/yamatsum/nvim-cursorline"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-spider"] = {
+    loaded = true,
+    path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/nvim-spider",
+    url = "https://github.com/chrisgrieser/nvim-spider"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -199,6 +214,11 @@ _G.packer_plugins = {
     path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["portal.nvim"] = {
+    loaded = true,
+    path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/portal.nvim",
+    url = "https://github.com/cbochs/portal.nvim"
+  },
   ["pretty-fold.nvim"] = {
     loaded = true,
     path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/pretty-fold.nvim",
@@ -214,15 +234,25 @@ _G.packer_plugins = {
     path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["toggleterm.nvim"] = {
+    loaded = true,
+    path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
+    url = "https://github.com/akinsho/toggleterm.nvim"
+  },
   ["tokyonight.nvim"] = {
     loaded = true,
     path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   },
-  ["vim-colors-green"] = {
+  ["twilight.nvim"] = {
     loaded = true,
-    path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/vim-colors-green",
-    url = "https://github.com/julien/vim-colors-green"
+    path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/twilight.nvim",
+    url = "https://github.com/folke/twilight.nvim"
+  },
+  ["vim-be-good"] = {
+    loaded = true,
+    path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/vim-be-good",
+    url = "https://github.com/ThePrimeagen/vim-be-good"
   },
   ["vim-js"] = {
     loaded = true,
@@ -238,6 +268,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/vim-monokai",
     url = "https://github.com/sickill/vim-monokai"
+  },
+  ["which-key.nvim"] = {
+    loaded = true,
+    path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 
