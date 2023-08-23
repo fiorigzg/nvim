@@ -6,7 +6,6 @@ require("toggleterm").setup {
 --
 -- keybindings
 --
-
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
@@ -14,7 +13,7 @@ keymap.set('n', [[<C-\>]], '<Cmd>ToggleTerm<CR>', opts)
 
 -- interminal navigation
 function _G.set_terminal_keymaps()
-  local opts = {buffer = 0}
+  opts = {buffer = 0}
   keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
   keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], opts)
   keymap.set('t', [[<C-\>]], '<Cmd>ToggleTerm<CR>', opts)

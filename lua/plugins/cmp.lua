@@ -3,6 +3,7 @@
 -- 
 require('luasnip.loaders.from_vscode').lazy_load()
 
+
 --
 -- nvim-cmp
 --
@@ -29,8 +30,7 @@ cmp.setup({
     {name = 'nvim_lsp'},
     {name = 'buffer'},
     {name = 'luasnip'},
-    {name = 'path'},
-    {name = 'codeium'}
+    {name = 'path'}
   })
 })
 

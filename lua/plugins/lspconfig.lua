@@ -5,23 +5,6 @@ require('mason').setup()
 require('mason-lspconfig').setup()
 
 
--- lspconfig.pyright.setup {}
--- lspconfig.tsserver.setup {}
--- lspconfig.eslint.setup {}
--- lspconfig.custom_elements_ls.setup {}
--- lspconfig.cssls.setup {}
--- lspconfig.html.setup {}
--- local servers = { 'pyright', 'tsserver', 'custom_elements_ls', 'cssls', 'html' }
--- for _, lsp in ipairs(servers) do
---   lspconfig[lsp].setup({
---     on_attach = function(_, bufnr)
---       vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
---       vim.api.nvim_buf_set_option(bufnr, 'tagfunc', 'v:lua.vim.lsp.tagfunc')
---     end
---   })
--- end
-
-
 -- 
 -- Setup language servers
 --
@@ -46,12 +29,14 @@ lspconfig.lua_ls.setup { capabilities = capabilities, on_attach = on_attach }
 
 
 --
--- Global mappings.
+-- keybindings
 --
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
+keymap = vim.keymap
+
+keymap.set('n', '<Space>lo', vim.diagnostic.open_float)
+keymap.set('n', '<Space>lp', vim.diagnostic.goto_prev)
+keymap.set('n', '<Space>ln', vim.diagnostic.goto_next)
+keymap.set('n', '<space>ll', vim.diagnostic.setloclist)
 
 
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -61,21 +46,21 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
     local opts = { buffer = ev.buf }
-    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-    vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
-    vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
-    vim.keymap.set('n', '<space>wl', function()
+    keymap.set('n', '<Space>lD', vim.lsp.buf.declaration, opts)
+    keymap.set('n', '<Space>ld', vim.lsp.buf.definition, opts)
+    keymap.set('n', '<Space>lh', vim.lsp.buf.hover, opts)
+    keymap.set('n', '<Space>li', vim.lsp.buf.implementation, opts)
+    keymap.set('n', '<Space>ls', vim.lsp.buf.signature_help, opts)
+    keymap.set('n', '<Space>lf', vim.lsp.buf.add_workspace_folder, opts)
+    keymap.set('n', '<Space>lr', vim.lsp.buf.remove_workspace_folder, opts)
+    keymap.set('n', '<Space>lF', function()
       print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, opts)
-    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
-    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
-    vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-    vim.keymap.set('n', '<space>f', function()
+    keymap.set('n', '<Space>lt', vim.lsp.buf.type_definition, opts)
+    keymap.set('n', '<Space>lR', vim.lsp.buf.rename, opts)
+    keymap.set({ 'n', 'v' }, '<Space>lc', vim.lsp.buf.code_action, opts)
+    keymap.set('n', '<Space>lH', vim.lsp.buf.references, opts)
+    keymap.set('n', '<space>lI', function()
       vim.lsp.buf.format { async = true }
     end, opts)
   end,

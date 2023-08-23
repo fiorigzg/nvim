@@ -2,6 +2,7 @@ require("spider").setup {
   skipInsignificantPunctuation = true
 }
 
+
 --
 -- keybindings
 --

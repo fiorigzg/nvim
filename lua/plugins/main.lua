@@ -82,14 +82,14 @@ return require('packer').startup(function(use)
   --   "jcdickinson/http.nvim",
   --   run = "cargo build --workspace --release"
   -- }
-  use { -- AI friend in cmp
-    "jcdickinson/codeium.nvim",
-    requires = {
-      -- "jcdickinson/http.nvim",
-      "nvim-lua/plenary.nvim",
-      "hrsh7th/nvim-cmp",
-    },
-  }
+  -- use { -- AI friend in cmp
+  --   "jcdickinson/codeium.nvim",
+  --   requires = {
+  --     -- "jcdickinson/http.nvim",
+  --     "nvim-lua/plenary.nvim",
+  --     "hrsh7th/nvim-cmp",
+  --   },
+  -- }
 
 
   -- 
@@ -110,7 +110,7 @@ return require('packer').startup(function(use)
   --
   -- formatting
   --
-	-- use 'Exafunction/codeium.vim' -- AI friend
+	use 'Exafunction/codeium.vim' -- AI friend
   use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'} -- for folding using lsp
 
 
