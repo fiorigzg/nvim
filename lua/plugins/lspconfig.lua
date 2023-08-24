@@ -22,9 +22,9 @@ lspconfig.tsserver.setup {
   filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx" },
   capabilities = capabilities
 }
--- lspconfig.custom_elements_ls.setup { capabilities = capabilities }
--- lspconfig.cssls.setup { capabilities = capabilities }
--- lspconfig.html.setup { capabilities = capabilities }
+lspconfig.custom_elements_ls.setup { capabilities = capabilities, on_attach = on_attach }
+lspconfig.cssls.setup { capabilities = capabilities, on_attach = on_attach }
+lspconfig.html.setup { capabilities = capabilities, on_attach = on_attach }
 lspconfig.lua_ls.setup { capabilities = capabilities, on_attach = on_attach }
 
 

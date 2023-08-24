@@ -22,6 +22,7 @@ require('plugins/portal')
 require('plugins/cursorline')
 require('plugins/lspconfig')
 require('plugins/cmp')
+require('plugins/lualine')
 -- require('plugins/coc')
 
 
@@ -35,12 +36,10 @@ return require('packer').startup(function(use)
   -- 
   -- themes
   --
-  use 'morhetz/gruvbox'
-  use 'Mofiqul/dracula.nvim'
-  use 'shaunsingh/nord.nvim'
   use 'folke/tokyonight.nvim'
   use 'EdenEast/nightfox.nvim'
   use 'sickill/vim-monokai'
+  use 'rebelot/kanagawa.nvim'
 
 
   -- 
@@ -50,7 +49,7 @@ return require('packer').startup(function(use)
 	use 'romgrk/barbar.nvim' -- top bar with open files
   use { -- good searcher
 		'nvim-telescope/telescope.nvim', tag = '0.1.2',
-		requires = { {'nvim-lua/plenary.nvim'} }
+		requires = { 'nvim-lua/plenary.nvim' }
 	}
   use { -- fast navigation in files
     'phaazon/hop.nvim',
@@ -127,6 +126,7 @@ return require('packer').startup(function(use)
   use "lukas-reineke/indent-blankline.nvim" -- for good indentation view
   use 'folke/twilight.nvim' -- for good night mode
   use 'yamatsum/nvim-cursorline' -- highlight similar words
+  use 'nvim-lualine/lualine.nvim' -- status line
 
 
   --
