@@ -10,7 +10,7 @@ vim.opt.termguicolors = true
 -- set own icons
 --
 require("nvim-tree").setup {
-    renderer = {
+  renderer = {
     indent_markers = {
        icons = {
           corner = "└",
@@ -65,6 +65,10 @@ require("nvim-tree").setup {
        error = "Ⓔ ",
      },
   },
+  git = {
+    enable = true,
+    ignore = false,
+  }
 }
 
 
