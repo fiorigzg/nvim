@@ -2,7 +2,7 @@ vim.wo.number = true
 
 require('plugins/main')
 
-vim.cmd [[colorscheme synthwave84]] -- default colorscheme
+vim.cmd [[colorscheme fluoromachine]] -- default colorscheme
 
 local set = vim.opt -- set options
 set.tabstop = 2

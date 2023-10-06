@@ -17,7 +17,6 @@ require('smart-splits').setup({
 -- keybindings
 --
 local keymap = vim.keymap
-local opts = { noremap = true, silent = true }
 
 keymap.set("n", "<Space>rr", function()
   require("smart-splits").start_resize_mode()

@@ -1,8 +1,5 @@
 require('barbar').setup {
   icons = {
-    buffer_index = false,
-    buffer_number = false,
-    button = '×',
     diagnostics = {
       [vim.diagnostic.severity.ERROR] = {enabled = true, icon = 'e'},
       [vim.diagnostic.severity.WARN] = {enabled = true, icon = 'w'},
@@ -13,24 +10,8 @@ require('barbar').setup {
       added = {enabled = true, icon = '+'},
       changed = {enabled = true, icon = '~'},
       deleted = {enabled = true, icon = '-'},
-    },
-    filetype = {
-      enabled = false,
-    },
-    separator = {left = '▎', right = ''},
-
-    separator_at_end = true,
-
-    modified = {button = '●'},
-    pinned = {button = '*', filename = true},
-
-    preset = 'default',
-
-    alternate = {filetype = {enabled = false}},
-    current = {buffer_index = true},
-    inactive = {button = '×'},
-    visible = {modified = {buffer_number = false}},
-  },
+    }
+  }
 }
 
 

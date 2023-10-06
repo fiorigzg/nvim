@@ -26,6 +26,7 @@ require('plugins/leetcode')
 require('plugins/nvimAutopairs')
 require('plugins/todoComments')
 require('plugins/smartSplits')
+require('plugins/nvimSpectre')
 -- require('plugins/spider')
 
 
@@ -40,10 +41,7 @@ return require('packer').startup(function(use)
   -- themes
   --
   use 'folke/tokyonight.nvim'
-  use 'EdenEast/nightfox.nvim'
-  use 'sickill/vim-monokai'
-  use 'rebelot/kanagawa.nvim'
-  use "lunarvim/synthwave84.nvim"
+  use 'maxmx03/fluoromachine.nvim'
 
 
   -- 
@@ -65,6 +63,7 @@ return require('packer').startup(function(use)
     requires = {'nvim-lua/plenary.nvim'}
   }
   use('mrjones2014/smart-splits.nvim') -- windows resizing
+  use('nvim-pack/nvim-spectre')
 
 
   -- 
@@ -110,6 +109,7 @@ return require('packer').startup(function(use)
   use 'folke/twilight.nvim' -- for good night mode
   use 'yamatsum/nvim-cursorline' -- highlight similar words
   use 'nvim-lualine/lualine.nvim' -- status lines
+  use 'nvim-tree/nvim-web-devicons' -- Icons
 
 
   --
