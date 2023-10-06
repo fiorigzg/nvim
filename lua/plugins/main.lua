@@ -27,6 +27,7 @@ require('plugins/nvimAutopairs')
 require('plugins/todoComments')
 require('plugins/smartSplits')
 require('plugins/nvimSpectre')
+require('plugins/alpha')
 -- require('plugins/spider')
 
 
@@ -110,7 +111,7 @@ return require('packer').startup(function(use)
   use 'yamatsum/nvim-cursorline' -- highlight similar words
   use 'nvim-lualine/lualine.nvim' -- status lines
   use 'nvim-tree/nvim-web-devicons' -- Icons
-
+  use 'goolord/alpha-nvim' -- start screen
 
   --
   -- git
