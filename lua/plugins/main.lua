@@ -43,6 +43,7 @@ return require('packer').startup(function(use)
   --
   use 'folke/tokyonight.nvim'
   use 'maxmx03/fluoromachine.nvim'
+  use "lunarvim/synthwave84.nvim"
 
 
   -- 
