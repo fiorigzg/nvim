@@ -10,6 +10,7 @@ set.softtabstop = 2
 set.shiftwidth = 2
 set.expandtab = true
 
+vim.opt.clipboard = 'unnamedplus'
 
 -- 
 -- keybindings
