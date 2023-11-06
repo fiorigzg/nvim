@@ -7,3 +7,6 @@ sudo apt install build-essential
 
 # for clipboard
 sudo apt install xclip
+
+# for codeium
+sudo apt install curl
