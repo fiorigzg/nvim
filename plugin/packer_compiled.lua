@@ -274,6 +274,13 @@ _G.packer_plugins = {
     path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/twilight.nvim",
     url = "https://github.com/folke/twilight.nvim"
   },
+  ["venv-selector.nvim"] = {
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/opt/venv-selector.nvim",
+    url = "https://github.com/linux-cultist/venv-selector.nvim"
+  },
   ["vim-be-good"] = {
     loaded = true,
     path = "/home/fiornrrn/.local/share/nvim/site/pack/packer/start/vim-be-good",
@@ -297,6 +304,13 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au VeryLazy * ++once lua require("packer.load")({'venv-selector.nvim'}, { event = "VeryLazy *" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
+vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

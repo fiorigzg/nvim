@@ -74,6 +74,11 @@ return require('packer').startup(function(use)
   use 'neovim/nvim-lspconfig' -- lsp config 
   use 'williamboman/mason.nvim' -- for easy lsp installing
   use 'williamboman/mason-lspconfig.nvim' -- for easy lsp installing
+  use { -- for venv selection(python)
+    'linux-cultist/venv-selector.nvim',
+    dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" },
+    event = "VeryLazy"
+  }
 
 
   -- 
