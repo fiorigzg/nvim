@@ -35,12 +35,11 @@ require("lazy").setup({
   'neovim/nvim-lspconfig', -- lsp config 
   'williamboman/mason.nvim', -- for easy lsp installing
   'williamboman/mason-lspconfig.nvim', -- for easy lsp installing
-  { -- for venv selection(python)
-    'linux-cultist/venv-selector.nvim',
-    dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" },
-    event = "VeryLazy"
+  { -- select venv python
+    "linux-cultist/venv-selector.nvim",
+      dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" },
+      event = "VeryLazy", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
   },
-
 
   -- 
   -- cmp 
