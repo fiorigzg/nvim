@@ -26,7 +26,7 @@ require("lazy").setup({
     dependencies = {'nvim-lua/plenary.nvim'}
   },
   'mrjones2014/smart-splits.nvim', -- windows resizing
-  'nvim-pack/nvim-spectre',
+  'nvim-pack/nvim-spectre', -- find and replace across files
 
 
   -- 
