@@ -57,7 +57,8 @@ require("lazy").setup({
   --
   -- formatting
   --
-	'Exafunction/codeium.vim', -- AI friend
+	-- 'Exafunction/codeium.vim', -- AI friend
+  'github/copilot.vim', -- new AI friend
   'windwp/nvim-autopairs', -- autopairs
   { -- for folding using lsp
     'kevinhwang91/nvim-ufo', 
