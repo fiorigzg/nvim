@@ -25,13 +25,13 @@ lspconfig.tsserver.setup {
 lspconfig.custom_elements_ls.setup { capabilities = capabilities, on_attach = on_attach }
 lspconfig.cssls.setup { capabilities = capabilities, on_attach = on_attach }
 lspconfig.html.setup { capabilities = capabilities, on_attach = on_attach }
-lspconfig.lua_ls.setup { capabilities = capabilities, on_attach = on_attach }
+lspconfig.lua_ls.setup { capabilities = capabilities, on_attach = on_attach, settings = { Lua = { diagnostics = { globals = { 'vim' } } } } }
 
 
 --
 -- keybindings
 --
-keymap = vim.keymap
+local keymap = vim.keymap
 
 keymap.set('n', '<Space>lo', vim.diagnostic.open_float)
 keymap.set('n', '<Space>lp', vim.diagnostic.goto_prev)

@@ -19,18 +19,22 @@ cmp.setup({
     documentation = cmp.config.window.bordered(),
   },
   mapping = cmp.mapping.preset.insert({
+    ['<C-R>'] = cmp.mapping.disable,
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
+    -- ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+    -- ['<C-Y>'] = cmp.mapping.confirm({ select = false }),
   }),
   sources = cmp.config.sources({
     {name = 'nvim_lsp'},
     {name = 'buffer'},
     {name = 'luasnip'},
+    {name = 'codeium'},
     {name = 'path'}
-  })
+  }),
+  preselect = cmp.PreselectMode.None
 })
 
 -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).

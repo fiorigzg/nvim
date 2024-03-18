@@ -3,8 +3,8 @@ require("lazy").setup({
   -- themes
   --
   'folke/tokyonight.nvim',
-  'maxmx03/fluoromachine.nvim',
-  "lunarvim/synthwave84.nvim",
+  -- 'maxmx03/fluoromachine.nvim',
+  -- "lunarvim/synthwave84.nvim",
 
 
   -- 
@@ -23,7 +23,7 @@ require("lazy").setup({
   'cbochs/portal.nvim', -- for quick jumplist
   {
     'folke/todo-comments.nvim', -- for todos management
-    dependencies = {'nvim-lua/plenary.nvim'}
+    dependencies = { 'nvim-lua/plenary.nvim' }
   },
   'mrjones2014/smart-splits.nvim', -- windows resizing
   'nvim-pack/nvim-spectre', -- find and replace across files
@@ -57,11 +57,16 @@ require("lazy").setup({
   --
   -- formatting
   --
-	-- 'Exafunction/codeium.vim', -- AI friend
-  'github/copilot.vim', -- new AI friend
-  'windwp/nvim-autopairs', -- autopairs
+  { -- ai friend
+    "Exafunction/codeium.nvim",
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+        "hrsh7th/nvim-cmp",
+    }
+  },
+  'windwp/nvim-autopairs', -- autopairs for brackets
   { -- for folding using lsp
-    'kevinhwang91/nvim-ufo', 
+    'kevinhwang91/nvim-ufo',
     dependencies = 'kevinhwang91/promise-async'
   },
 
@@ -76,7 +81,7 @@ require("lazy").setup({
 	'yuezk/vim-js', -- JS syntax
 	'maxmellon/vim-jsx-pretty', -- JSX syntax
 	'anuvyklack/pretty-fold.nvim', -- for good view of folds
-  "lukas-reineke/indent-blankline.nvim", -- for good indentation view
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {}}, -- for good indentation view
   'folke/twilight.nvim', -- for good night mode
   'yamatsum/nvim-cursorline', -- highlight similar words
   'nvim-lualine/lualine.nvim', -- status lines
