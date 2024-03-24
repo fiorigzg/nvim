@@ -33,10 +33,10 @@ lspconfig.lua_ls.setup { capabilities = capabilities, on_attach = on_attach, set
 --
 local keymap = vim.keymap
 
-keymap.set('n', '<Space>lo', vim.diagnostic.open_float)
-keymap.set('n', '<Space>lp', vim.diagnostic.goto_prev)
-keymap.set('n', '<Space>ln', vim.diagnostic.goto_next)
-keymap.set('n', '<space>ll', vim.diagnostic.setloclist)
+keymap.set('n', '<Space>do', vim.diagnostic.open_float)
+keymap.set('n', '<Space>dp', vim.diagnostic.goto_prev)
+keymap.set('n', '<Space>dn', vim.diagnostic.goto_next)
+keymap.set('n', '<space>dl', vim.diagnostic.setloclist)
 
 
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -65,3 +65,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, opts)
   end,
 })
+
+vim.api.nvim_create_user_command("DiagnosticToggle", function()
+	local config = vim.diagnostic.config
+	local vt = config().virtual_text
+	config {
+		virtual_text = not vt,
+		underline = not vt,
+		signs = not vt,
+	}
+end, { desc = "toggle diagnostic" })

@@ -16,7 +16,7 @@ vim.wo.number = true
 require("plugins-install")
 require("plugins-settings/load-settings")
 
-vim.cmd [[colorscheme tokyonight-night]] -- default colorscheme
+vim.cmd('colorscheme github_dark_dimmed')
 
 local set = vim.opt -- set options
 set.tabstop = 2

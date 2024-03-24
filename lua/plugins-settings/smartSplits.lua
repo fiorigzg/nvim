@@ -13,6 +13,7 @@ require('smart-splits').setup({
   },
 })
 
+
 -- 
 -- keybindings
 --

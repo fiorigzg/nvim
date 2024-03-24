@@ -3,8 +3,10 @@ require("lazy").setup({
   -- themes
   --
   'folke/tokyonight.nvim',
-  -- 'maxmx03/fluoromachine.nvim',
-  -- "lunarvim/synthwave84.nvim",
+  "EdenEast/nightfox.nvim",
+  'projekt0n/github-nvim-theme',
+  'maxmx03/fluoromachine.nvim',
+  "lunarvim/synthwave84.nvim",
 
 
   -- 
@@ -20,9 +22,15 @@ require("lazy").setup({
     'phaazon/hop.nvim',
     branch = 'v2'
   },
-  'cbochs/portal.nvim', -- for quick jumplist
-  {
-    'folke/todo-comments.nvim', -- for todos management
+  { -- for quick jumplist
+    'cbochs/portal.nvim',
+    dependencies = {
+      "cbochs/grapple.nvim",
+      "ThePrimeagen/harpoon"
+    }
+  },
+  { -- for todos management
+    'folke/todo-comments.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
   'mrjones2014/smart-splits.nvim', -- windows resizing
@@ -47,11 +55,9 @@ require("lazy").setup({
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
-      "hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp", 'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline', 'saadparwaiz1/cmp_luasnip'
+      "hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp", 'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline',
     }
   },
-  'L3MON4D3/LuaSnip',
-  'rafamadriz/friendly-snippets',
 
 
   --
@@ -69,6 +75,8 @@ require("lazy").setup({
     'kevinhwang91/nvim-ufo',
     dependencies = 'kevinhwang91/promise-async'
   },
+  'mfussenegger/nvim-dap', -- debugger
+  { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} },
 
 
   --
@@ -82,11 +90,11 @@ require("lazy").setup({
 	'maxmellon/vim-jsx-pretty', -- JSX syntax
 	'anuvyklack/pretty-fold.nvim', -- for good view of folds
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {}}, -- for good indentation view
-  'folke/twilight.nvim', -- for good night mode
   'yamatsum/nvim-cursorline', -- highlight similar words
   'nvim-lualine/lualine.nvim', -- status lines
   'nvim-tree/nvim-web-devicons', -- Icons
   'goolord/alpha-nvim', -- start screen
+
 
   --
   -- git
@@ -112,5 +120,4 @@ require("lazy").setup({
   -- other
   --
   'ThePrimeagen/vim-be-good', -- fast typing game
---   'ianding1/leetcode.vim', -- for leetcode
 })

@@ -3,6 +3,7 @@ require('todo-comments').setup {
   signs = false
 }
 
+
 -- 
 -- keybindings
 --
