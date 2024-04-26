@@ -41,12 +41,8 @@ require("lazy").setup({
   -- lspconfig
   --
   'neovim/nvim-lspconfig', -- lsp config 
-  -- 'williamboman/mason.nvim', -- for easy lsp installing
-  -- 'williamboman/mason-lspconfig.nvim', -- for easy lsp installing
-  {
-    "dundalek/lazy-lsp.nvim",
-    dependencies = { "neovim/nvim-lspconfig" },
-  },
+  'williamboman/mason.nvim', -- for easy lsp installing
+  'williamboman/mason-lspconfig.nvim', -- for easy lsp installing
   { -- select venv python
     "linux-cultist/venv-selector.nvim",
       dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" },

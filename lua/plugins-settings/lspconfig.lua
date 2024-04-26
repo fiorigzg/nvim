@@ -1,8 +1,10 @@
 -- 
 -- mason
 --
--- require('mason').setup()
--- require('mason-lspconfig').setup()
+require('mason').setup()
+require('mason-lspconfig').setup {
+  ensure_installed = { "pyright", "tsserver", "custom_elements_ls", "cssls", "html", "lua_ls" }
+}
 
 
 -- 
