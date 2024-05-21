@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 vim.wo.number = true
+-- vim.deprecate = function() end
 
 require("plugins-install")
 require("plugins-settings/load-settings")
