@@ -7,7 +7,7 @@ require("lazy").setup({
   'projekt0n/github-nvim-theme',
   'maxmx03/fluoromachine.nvim',
   "lunarvim/synthwave84.nvim",
-
+  'ellisonleao/gruvbox.nvim',
 
   -- 
   -- navigation
@@ -88,7 +88,6 @@ require("lazy").setup({
   },
 	'yuezk/vim-js', -- JS syntax
 	'maxmellon/vim-jsx-pretty', -- JSX syntax
-	'anuvyklack/pretty-fold.nvim', -- for good view of folds
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {}}, -- for good indentation view
   'yamatsum/nvim-cursorline', -- highlight similar words
   'nvim-lualine/lualine.nvim', -- status lines
@@ -112,7 +111,7 @@ require("lazy").setup({
   -- keybuindings
   --
   'folke/which-key.nvim', -- keybindings controller
-  -- 'chrisgrieser/nvim-spider', -- better w,b,e,ge
+  -- { 'chrisgrieser/nvim-spider', lazy = true }, -- better w,b,e,ge
   'numToStr/Comment.nvim', -- fast comment plugin 
 
 

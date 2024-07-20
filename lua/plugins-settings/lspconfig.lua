@@ -40,6 +40,15 @@ keymap.set('n', '<Space>dp', vim.diagnostic.goto_prev)
 keymap.set('n', '<Space>dn', vim.diagnostic.goto_next)
 keymap.set('n', '<space>dl', vim.diagnostic.setloclist)
 
+vim.api.nvim_create_user_command("DiagnosticToggle", function()
+	local config = vim.diagnostic.config
+	local vt = config().virtual_text
+	config {
+		virtual_text = not vt,
+		underline = not vt,
+		signs = not vt,
+	}
+end, { desc = "toggle diagnostic" })
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
@@ -48,6 +57,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
     local opts = { buffer = ev.buf }
+    keymap.set('n', '<Space>lO', '<Cmd>DiagnosticToggle<CR>', opts)
     keymap.set('n', '<Space>lD', vim.lsp.buf.declaration, opts)
     keymap.set('n', '<Space>ld', vim.lsp.buf.definition, opts)
     keymap.set('n', '<Space>lh', vim.lsp.buf.hover, opts)
@@ -67,13 +77,3 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, opts)
   end,
 })
-
-vim.api.nvim_create_user_command("DiagnosticToggle", function()
-	local config = vim.diagnostic.config
-	local vt = config().virtual_text
-	config {
-		virtual_text = not vt,
-		underline = not vt,
-		signs = not vt,
-	}
-end, { desc = "toggle diagnostic" })

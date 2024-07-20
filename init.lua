@@ -17,12 +17,12 @@ vim.wo.number = true
 require("plugins-install")
 require("plugins-settings/load-settings")
 
-vim.cmd('colorscheme github_dark_dimmed')
+vim.cmd('colorscheme gruvbox')
 
 local set = vim.opt -- set options
-set.tabstop = 2
-set.softtabstop = 2
-set.shiftwidth = 2
+set.tabstop = 4
+set.softtabstop = 4
+set.shiftwidth = 4
 set.expandtab = true
 
 vim.opt.clipboard = 'unnamedplus'
