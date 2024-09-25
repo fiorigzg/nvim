@@ -70,6 +70,9 @@ require("lazy").setup({
         "hrsh7th/nvim-cmp",
     }
   },
+  {
+    "robitx/gp.nvim"
+  },
   'windwp/nvim-autopairs', -- autopairs for brackets
   { -- for folding using lsp
     'kevinhwang91/nvim-ufo',
