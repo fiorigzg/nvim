@@ -3,7 +3,7 @@
 --
 require('mason').setup()
 require('mason-lspconfig').setup {
-  ensure_installed = { "pyright", "tsserver", "custom_elements_ls", "cssls", "html", "lua_ls" }
+  ensure_installed = { "pyright", "ts_ls", "custom_elements_ls", "cssls", "html", "lua_ls" }
 }
 
 
@@ -19,7 +19,7 @@ local on_attach = function(_, bufnr)
 end
 
 lspconfig.pyright.setup { capabilities = capabilities, on_attach = on_attach }
-lspconfig.tsserver.setup {
+lspconfig.ts_ls.setup {
   on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx" },
   capabilities = capabilities
