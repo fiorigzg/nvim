@@ -1,17 +1,17 @@
 require('barbar').setup {
-  icons = {
-    diagnostics = {
-      [vim.diagnostic.severity.ERROR] = {enabled = true, icon = 'e'},
-      [vim.diagnostic.severity.WARN] = {enabled = true, icon = 'w'},
-      [vim.diagnostic.severity.INFO] = {enabled = true, icon = 'i'},
-      [vim.diagnostic.severity.HINT] = {enabled = true, icon = 'h'},
-    },
-    gitsigns = {
-      added = {enabled = true, icon = '+'},
-      changed = {enabled = true, icon = '~'},
-      deleted = {enabled = true, icon = '-'},
+    icons = {
+        diagnostics = {
+            [vim.diagnostic.severity.ERROR] = { enabled = true, icon = 'e' },
+            [vim.diagnostic.severity.WARN] = { enabled = true, icon = 'w' },
+            [vim.diagnostic.severity.INFO] = { enabled = true, icon = 'i' },
+            [vim.diagnostic.severity.HINT] = { enabled = true, icon = 'h' },
+        },
+        gitsigns = {
+            added = { enabled = true, icon = '+' },
+            changed = { enabled = true, icon = '~' },
+            deleted = { enabled = true, icon = '-' },
+        }
     }
-  }
 }
 
 
