@@ -44,10 +44,11 @@ require("lazy").setup({
     'neovim/nvim-lspconfig',             -- lsp config
     'williamboman/mason.nvim',           -- for easy lsp installing
     'williamboman/mason-lspconfig.nvim', -- for easy lsp installing
-    {                                    -- select venv python
-        "linux-cultist/venv-selector.nvim",
-        dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" },
-        event = "VeryLazy", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
+    {
+        'linux-cultist/venv-selector.nvim',
+        dependencies = { 'neovim/nvim-lspconfig', 'nvim-telescope/telescope.nvim', 'mfussenegger/nvim-dap-python' },
+        branch = "regexp",
+        event = "VeryLazy",
     },
 
     --
@@ -64,13 +65,46 @@ require("lazy").setup({
     --
     -- formatting
     --
-    {
+    { -- for copilot
         "zbirenbaum/copilot.lua",
         cmd = "Copilot",
         event = "InsertEnter",
     },
-    {
-        "robitx/gp.nvim"
+    { -- ai like cursor
+        "yetone/avante.nvim",
+        event = "VeryLazy",
+        lazy = false,
+        version = false,
+        build = "make",
+        dependencies = {
+            "stevearc/dressing.nvim",
+            "nvim-lua/plenary.nvim",
+            "MunifTanjim/nui.nvim",
+            "hrsh7th/nvim-cmp",
+            "nvim-tree/nvim-web-devicons",
+            "zbirenbaum/copilot.lua",
+            {
+                "HakonHarnes/img-clip.nvim",
+                event = "VeryLazy",
+                opts = {
+                    default = {
+                        embed_image_as_base64 = false,
+                        prompt_for_file_name = false,
+                        drag_and_drop = {
+                            insert_mode = true,
+                        },
+                        use_absolute_path = true,
+                    },
+                },
+            },
+            {
+                'MeanderingProgrammer/render-markdown.nvim',
+                opts = {
+                    file_types = { "markdown", "Avante" },
+                },
+                ft = { "markdown", "Avante" },
+            },
+        },
     },
     'windwp/nvim-autopairs', -- autopairs for brackets
     {                        -- for folding using lsp
@@ -92,13 +126,13 @@ require("lazy").setup({
         'nvim-treesitter/nvim-treesitter',
         build = ":TSUpdate"
     },
-    'yuezk/vim-js',                                                                                                         -- JS syntax
-    'maxmellon/vim-jsx-pretty',                                                                                             -- JSX syntax
+    'yuezk/vim-js',                                                                                                           -- JS syntax
+    'maxmellon/vim-jsx-pretty',                                                                                               -- JSX syntax
     { "lukas-reineke/indent-blankline.nvim", main = "ibl",                                                       opts = {} }, -- for good indentation view
-    'yamatsum/nvim-cursorline',                                                                                             -- highlight similar words
-    'nvim-lualine/lualine.nvim',                                                                                            -- status lines
-    'nvim-tree/nvim-web-devicons',                                                                                          -- Icons
-    'goolord/alpha-nvim',                                                                                                   -- start screen
+    'yamatsum/nvim-cursorline',                                                                                               -- highlight similar words
+    'nvim-lualine/lualine.nvim',                                                                                              -- status lines
+    'nvim-tree/nvim-web-devicons',                                                                                            -- Icons
+    'goolord/alpha-nvim',                                                                                                     -- start screen
 
 
     --
