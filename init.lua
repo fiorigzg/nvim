@@ -32,3 +32,11 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "javascript", "typescript", "javascriptreact", "typescriptreact", "html", "css" },
+    callback = function()
+        vim.bo.tabstop = 2
+        vim.bo.shiftwidth = 2
+        vim.bo.softtabstop = 2
+    end,
+})
