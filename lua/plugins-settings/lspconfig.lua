@@ -3,7 +3,7 @@
 --
 require('mason').setup()
 require('mason-lspconfig').setup {
-    ensure_installed = { "pyright", "ts_ls", "cssls", "html", "dcm", "lua_ls" }
+    ensure_installed = { "pyright", "ts_ls", "cssls", "html", "clangd", "lua_ls" }
 }
 
 
@@ -24,9 +24,9 @@ lspconfig.ts_ls.setup {
     filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx" },
     capabilities = capabilities
 }
-lspconfig.dcm.setup { capabilities = capabilities, on_attach = on_attach }
 lspconfig.cssls.setup { capabilities = capabilities, on_attach = on_attach }
 lspconfig.html.setup { capabilities = capabilities, on_attach = on_attach }
+lspconfig.clangd.setup { capabilities = capabilities, on_attach = on_attach }
 lspconfig.lua_ls.setup { capabilities = capabilities, on_attach = on_attach, settings = { Lua = { diagnostics = { globals = { 'vim' } } } } }
 
 
