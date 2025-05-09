@@ -22,7 +22,7 @@ vim.opt.clipboard = 'unnamedplus'
 
 -- Load plugins and their settings
 require("plugins-install")
-require("plugins-settings/load-settings")
+require("plugins-load")
 
 -- Set colorscheme
 vim.cmd('colorscheme gruvbox')

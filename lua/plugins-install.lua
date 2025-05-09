@@ -46,7 +46,11 @@ require("lazy").setup({
     'williamboman/mason-lspconfig.nvim', -- for easy lsp installing
     {
         'linux-cultist/venv-selector.nvim',
-        dependencies = { 'neovim/nvim-lspconfig', 'nvim-telescope/telescope.nvim', 'mfussenegger/nvim-dap-python' },
+        dependencies = {
+            'neovim/nvim-lspconfig',
+            'nvim-telescope/telescope.nvim',
+            'mfussenegger/nvim-dap-python'
+        },
         branch = "regexp",
         event = "VeryLazy",
     },
@@ -76,8 +80,11 @@ require("lazy").setup({
         dependencies = 'kevinhwang91/promise-async'
     },
     'mfussenegger/nvim-dap', -- debugger
-    { "rcarriga/nvim-dap-ui",                dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
-    {                        -- formatter
+    {
+        "rcarriga/nvim-dap-ui",
+        dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" }
+    },
+    { -- formatter
         'stevearc/conform.nvim',
         opts = {},
     },
@@ -90,24 +97,18 @@ require("lazy").setup({
         'nvim-treesitter/nvim-treesitter',
         build = ":TSUpdate"
     },
-    'yuezk/vim-js',                                                                                                           -- JS syntax
-    'maxmellon/vim-jsx-pretty',                                                                                               -- JSX syntax
-    { "lukas-reineke/indent-blankline.nvim", main = "ibl",                                                       opts = {} }, -- for good indentation view
-    'yamatsum/nvim-cursorline',                                                                                               -- highlight similar words
-    'nvim-lualine/lualine.nvim',                                                                                              -- status lines
-    'nvim-tree/nvim-web-devicons',                                                                                            -- Icons
+    'yuezk/vim-js',                                                     -- JS syntax
+    'maxmellon/vim-jsx-pretty',                                         -- JSX syntax
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }, -- for good indentation view
+    'yamatsum/nvim-cursorline',                                         -- highlight similar words
+    'nvim-lualine/lualine.nvim',                                        -- status lines
+    'nvim-tree/nvim-web-devicons',                                      -- Icons
 
 
     --
     -- git
     --
     "sindrets/diffview.nvim", -- show all file git diff
-
-
-    --
-    -- terminal
-    --
-    'akinsho/toggleterm.nvim', -- terminal
 
 
     --
