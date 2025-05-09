@@ -70,42 +70,6 @@ require("lazy").setup({
         cmd = "Copilot",
         event = "InsertEnter",
     },
-    { -- ai like cursor
-        "yetone/avante.nvim",
-        event = "VeryLazy",
-        lazy = false,
-        version = false,
-        build = "make",
-        dependencies = {
-            "stevearc/dressing.nvim",
-            "nvim-lua/plenary.nvim",
-            "MunifTanjim/nui.nvim",
-            "hrsh7th/nvim-cmp",
-            "nvim-tree/nvim-web-devicons",
-            "zbirenbaum/copilot.lua",
-            {
-                "HakonHarnes/img-clip.nvim",
-                event = "VeryLazy",
-                opts = {
-                    default = {
-                        embed_image_as_base64 = false,
-                        prompt_for_file_name = false,
-                        drag_and_drop = {
-                            insert_mode = true,
-                        },
-                        use_absolute_path = true,
-                    },
-                },
-            },
-            {
-                'MeanderingProgrammer/render-markdown.nvim',
-                opts = {
-                    file_types = { "markdown", "Avante" },
-                },
-                ft = { "markdown", "Avante" },
-            },
-        },
-    },
     'windwp/nvim-autopairs', -- autopairs for brackets
     {                        -- for folding using lsp
         'kevinhwang91/nvim-ufo',
@@ -132,7 +96,6 @@ require("lazy").setup({
     'yamatsum/nvim-cursorline',                                                                                               -- highlight similar words
     'nvim-lualine/lualine.nvim',                                                                                              -- status lines
     'nvim-tree/nvim-web-devicons',                                                                                            -- Icons
-    'goolord/alpha-nvim',                                                                                                     -- start screen
 
 
     --

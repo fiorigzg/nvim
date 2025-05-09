@@ -1,7 +1,11 @@
 --
 -- mason
 --
-require('mason').setup()
+require("mason").setup {
+  ui = {
+    border = "none"
+  }
+}
 require('mason-lspconfig').setup {
     ensure_installed = { "pyright", "ts_ls", "cssls", "html", "clangd", "lua_ls" }
 }
