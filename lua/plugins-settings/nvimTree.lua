@@ -6,29 +6,29 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
 
--- 
+--
 -- set own icons
 --
 require("nvim-tree").setup {
-  renderer = {
-     icons = {
-       glyphs = {
-         git = {
-            unstaged = "+",
-            staged = "#",
-            unmerged = "↮ ",
-            renamed = "➙ ",
-            untracked = "-",
-            deleted = "☒ ",
-            ignored = "◌ ",
-          },
-      },
+    renderer = {
+        icons = {
+            glyphs = {
+                git = {
+                    unstaged = "+",
+                    staged = "#",
+                    unmerged = "↮ ",
+                    renamed = "➙ ",
+                    untracked = "-",
+                    deleted = "☒ ",
+                    ignored = "◌ ",
+                },
+            },
+        },
     },
-  },
-  git = {
-    enable = true,
-    ignore = false,
-  }
+    git = {
+        enable = true,
+        ignore = false,
+    }
 }
 
 

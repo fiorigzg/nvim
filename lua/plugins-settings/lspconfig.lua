@@ -2,9 +2,9 @@
 -- mason
 --
 require("mason").setup {
-  ui = {
-    border = "none"
-  }
+    ui = {
+        border = "none"
+    }
 }
 require('mason-lspconfig').setup {
     ensure_installed = { "pyright", "ts_ls", "cssls", "html", "clangd", "lua_ls" }
@@ -32,6 +32,18 @@ lspconfig.cssls.setup { capabilities = capabilities, on_attach = on_attach }
 lspconfig.html.setup { capabilities = capabilities, on_attach = on_attach }
 lspconfig.clangd.setup { capabilities = capabilities, on_attach = on_attach }
 lspconfig.lua_ls.setup { capabilities = capabilities, on_attach = on_attach, settings = { Lua = { diagnostics = { globals = { 'vim' } } } } }
+lspconfig.tailwindcss.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    filetypes = { "html", "css", "javascript", "typescript", "javascriptreact", "typescriptreact" },
+    settings = {
+        tailwindCSS = {
+            experimental = {
+                classRegex = { "tw`([^`]*)", "tw\\(([^)]*)\\)" }
+            }
+        }
+    }
+}
 
 
 --

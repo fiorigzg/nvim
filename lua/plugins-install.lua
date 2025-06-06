@@ -74,6 +74,61 @@ require("lazy").setup({
         cmd = "Copilot",
         event = "InsertEnter",
     },
+    { -- ai like cursor
+        "yetone/avante.nvim",
+        event = "VeryLazy",
+        version = false,
+        keys = {
+            {
+                "<Space>a+",
+                function()
+                    local tree_ext = require("avante.extensions.nvim_tree")
+                    tree_ext.add_file()
+                end,
+                desc = "Select file in NvimTree",
+                ft = "NvimTree",
+            },
+            {
+                "<Space>a-",
+                function()
+                    local tree_ext = require("avante.extensions.nvim_tree")
+                    tree_ext.remove_file()
+                end,
+                desc = "Deselect file in NvimTree",
+                ft = "NvimTree",
+            },
+        },
+        build = "make",
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter",
+            "stevearc/dressing.nvim",
+            "nvim-lua/plenary.nvim",
+            "MunifTanjim/nui.nvim",
+            "nvim-tree/nvim-web-devicons",
+            "zbirenbaum/copilot.lua",
+            {
+                "HakonHarnes/img-clip.nvim",
+                event = "VeryLazy",
+                opts = {
+                    default = {
+                        embed_image_as_base64 = false,
+                        prompt_for_file_name = false,
+                        drag_and_drop = {
+                            insert_mode = true,
+                        },
+                        use_absolute_path = true,
+                    },
+                },
+            },
+            {
+                'MeanderingProgrammer/render-markdown.nvim',
+                opts = {
+                    file_types = { "markdown", "Avante" },
+                },
+                ft = { "markdown", "Avante" },
+            },
+        },
+    },
     'windwp/nvim-autopairs', -- autopairs for brackets
     {                        -- for folding using lsp
         'kevinhwang91/nvim-ufo',
