@@ -12,9 +12,8 @@ require('mason-lspconfig').setup {
 
 
 --
--- Setup language servers
+-- Setup language servers using vim.lsp.config (Neovim 0.11+)
 --
-local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local on_attach = function(_, bufnr)
@@ -22,17 +21,46 @@ local on_attach = function(_, bufnr)
     vim.api.nvim_buf_set_option(bufnr, 'tagfunc', 'v:lua.vim.lsp.tagfunc')
 end
 
-lspconfig.pyright.setup { capabilities = capabilities, on_attach = on_attach }
-lspconfig.ts_ls.setup {
+-- Configure each language server
+vim.lsp.config.pyright = {
+    capabilities = capabilities,
+    on_attach = on_attach,
+}
+
+vim.lsp.config.ts_ls = {
     on_attach = on_attach,
     filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx" },
-    capabilities = capabilities
+    capabilities = capabilities,
 }
-lspconfig.cssls.setup { capabilities = capabilities, on_attach = on_attach }
-lspconfig.html.setup { capabilities = capabilities, on_attach = on_attach }
-lspconfig.clangd.setup { capabilities = capabilities, on_attach = on_attach }
-lspconfig.lua_ls.setup { capabilities = capabilities, on_attach = on_attach, settings = { Lua = { diagnostics = { globals = { 'vim' } } } } }
-lspconfig.tailwindcss.setup {
+
+vim.lsp.config.cssls = {
+    capabilities = capabilities,
+    on_attach = on_attach,
+}
+
+vim.lsp.config.html = {
+    capabilities = capabilities,
+    on_attach = on_attach,
+}
+
+vim.lsp.config.clangd = {
+    capabilities = capabilities,
+    on_attach = on_attach,
+}
+
+vim.lsp.config.lua_ls = {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
+}
+
+vim.lsp.config.tailwindcss = {
     capabilities = capabilities,
     on_attach = on_attach,
     filetypes = { "html", "css", "javascript", "typescript", "javascriptreact", "typescriptreact" },
@@ -44,6 +72,9 @@ lspconfig.tailwindcss.setup {
         }
     }
 }
+
+-- Enable the language servers
+vim.lsp.enable({ 'pyright', 'ts_ls', 'cssls', 'html', 'clangd', 'lua_ls', 'tailwindcss' })
 
 
 --
