@@ -35,7 +35,6 @@ return {
                 { "<Space>d", group = "diagnostics" },
                 { "<Space>f", group = "find" },
                 { "<Space>g", group = "git" },
-                { "<Space>j", group = "jupyter" },
                 { "<Space>l", group = "lsp" },
                 { "<Space>s", group = "search/replace" },
                 { "<Space>t", group = "todo" },

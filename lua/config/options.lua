@@ -34,12 +34,6 @@ opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 opt.foldlevel = 99
 opt.foldlevelstart = 99
 
--- Python host for remote plugins (molten), see lua/plugins/jupyter.lua
-local python_host = vim.fn.stdpath("data") .. "/python-venv/bin/python"
-if vim.uv.fs_stat(python_host) then
-    vim.g.python3_host_prog = python_host
-end
-
 -- Diagnostics
 vim.diagnostic.config({
     severity_sort = true,
